@@ -1,8 +1,12 @@
 name: Pull
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      branche:
+        description: '実行ブランチ'
+        required: true
+        default: 'main'
 
 jobs:
   pull:
@@ -45,4 +49,4 @@ jobs:
           git commit -m "Pull articles (automatic commit)" ;\
         fi
 
-        git push origin HEAD:main
+        git push origin HEAD:${{ github.event.inputs.branche }}
