@@ -45,4 +45,4 @@ jobs:
           git commit -m "Pull articles (automatic commit)" ;\
         fi
 
-        git push origin HEAD:main
+        git push origin HEAD:release
